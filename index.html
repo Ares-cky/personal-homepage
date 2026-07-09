@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Alan 的个人主页骨架：个人表达、当前关注、精选项目与联系入口。"
+    />
+    <title>Alan | Personal Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="field" aria-hidden="true"></canvas>
+    <div class="texture" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Alan home">
+        <span class="brand-mark">A</span>
+        <span data-i18n="brand">Alan</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#now" data-i18n="navNow">此刻</a>
+        <a href="#reading" data-i18n="navReading">在读</a>
+        <a href="#calligraphy" data-i18n="navCalligraphy">书法</a>
+        <a href="#projects" data-i18n="navProjects">项目</a>
+        <a href="#contact" data-i18n="navContact">联系</a>
+      </nav>
+
+      <button class="language-toggle" type="button" data-language-toggle aria-label="Switch language">
+        <span class="toggle-dot" aria-hidden="true"></span>
+        <span data-language-label>EN</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">个人表达 / 创造中的主页</p>
+          <h1 id="hero-title" data-i18n="heroTitle">Alan</h1>
+          <p class="hero-statement" data-i18n="heroStatement">
+            在想法、系统和日常之间，搭一个可以慢慢生长的入口。
+          </p>
+          <p class="hero-body" data-i18n="heroBody">
+            这里会逐步收拢我正在关注的问题、做过的项目，以及那些还没有被整理成正式作品的灵感。
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#projects">
+              <span aria-hidden="true">↘</span>
+              <span data-i18n="viewProjects">看项目</span>
+            </a>
+            <a class="button ghost" href="#contact">
+              <span aria-hidden="true">✦</span>
+              <span data-i18n="startContact">建立连接</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="signal-panel" aria-label="Site snapshot">
+          <div class="signal-orbit" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <dl>
+            <div>
+              <dt data-i18n="signalModeLabel">状态</dt>
+              <dd data-i18n="signalMode">搭建中</dd>
+            </div>
+            <div>
+              <dt data-i18n="signalFocusLabel">关注</dt>
+              <dd data-i18n="signalFocus">表达、工具、系统</dd>
+            </div>
+            <div>
+              <dt data-i18n="signalUpdateLabel">更新</dt>
+              <dd><span data-i18n="signalUpdate">v0.2</span><br /><span style="font-size:0.75rem;color:var(--muted);font-weight:500" data-i18n="signalUpdateDate">2026.07</span></dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="section now-section" id="now" aria-labelledby="now-title">
+        <div class="section-kicker" data-i18n="nowKicker">Now</div>
+        <div class="section-heading">
+          <h2 id="now-title" data-i18n="nowTitle">此刻正在形成的东西</h2>
+          <p data-i18n="nowIntro">
+            先把方向放在这里，等真实内容长出来之后，再替换成更具体的记录。
+          </p>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <span class="card-index">01</span>
+            <h3 data-i18n="focusOneTitle">思考结构</h3>
+            <p data-i18n="focusOneBody">整理复杂问题、工作流和个人知识系统。</p>
+          </article>
+          <article class="focus-card">
+            <span class="card-index">02</span>
+            <h3 data-i18n="focusTwoTitle">创造工具</h3>
+            <p data-i18n="focusTwoBody">把灵感做成可以被反复使用的小工具或界面。</p>
+          </article>
+          <article class="focus-card">
+            <span class="card-index">03</span>
+            <h3 data-i18n="focusThreeTitle">长期表达</h3>
+            <p data-i18n="focusThreeBody">为随笔、项目记录和观察留出一个稳定的位置。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reading-section" id="reading" aria-labelledby="reading-title">
+        <div class="section-kicker" data-i18n="readingKicker">Reading</div>
+        <div class="section-heading">
+          <h2 id="reading-title" data-i18n="readingTitle">在读</h2>
+          <p data-i18n="readingIntro">最近在读和反复翻阅的书。</p>
+        </div>
+        <div class="book-grid">
+          <div class="book-card">
+            <div class="book-cover" aria-hidden="true">
+              <img src="./images/book-santi.jpg" alt="三体封面" class="book-cover-img" loading="lazy" />
+            </div>
+            <div class="book-info">
+              <span class="book-tag" data-i18n="readingTagOne">科幻 / 文学</span>
+              <h3 data-i18n="bookTitleOne">三体</h3>
+              <p class="book-author" data-i18n="bookAuthorOne">刘慈欣</p>
+              <p class="book-progress-label" data-i18n="readingProgress">进度</p>
+              <div class="progress-track">
+                <div class="progress-fill" style="width:72%"></div>
+              </div>
+              <p class="book-progress-text" data-i18n="readingProgressText">第二部 · 黑暗森林</p>
+              <p class="book-note" data-i18n="bookNoteOne">"给岁月以文明，而不是给文明以岁月。"</p>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" aria-hidden="true">
+              <img src="./images/红楼梦.jpg" alt="红楼梦封面" class="book-cover-img" loading="lazy" />
+            </div>
+            <div class="book-info">
+              <span class="book-tag" data-i18n="readingTagTwo">古典 / 文学</span>
+              <h3 data-i18n="bookTitleTwo">红楼梦</h3>
+              <p class="book-author" data-i18n="bookAuthorTwo">曹雪芹</p>
+              <p class="book-note" data-i18n="bookNoteTwo">"满纸荒唐言，一把辛酸泪。"</p>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" aria-hidden="true">
+              <img src="./images/基督山伯爵.jpg" alt="基督山伯爵封面" class="book-cover-img" loading="lazy" />
+            </div>
+            <div class="book-info">
+              <span class="book-tag" data-i18n="readingTagThree">经典 / 冒险</span>
+              <h3 data-i18n="bookTitleThree">基督山伯爵</h3>
+              <p class="book-author" data-i18n="bookAuthorThree">大仲马</p>
+              <p class="book-note" data-i18n="bookNoteThree">"人类的一切智慧包含在四个字里：等待和希望。"</p>
+            </div>
+          </div>
+
+          <div class="book-card">
+            <div class="book-cover" aria-hidden="true">
+              <img src="./images/月亮与六便士.jpg" alt="月亮与六便士封面" class="book-cover-img" loading="lazy" />
+            </div>
+            <div class="book-info">
+              <span class="book-tag" data-i18n="readingTagFour">小说 / 经典</span>
+              <h3 data-i18n="bookTitleFour">月亮与六便士</h3>
+              <p class="book-author" data-i18n="bookAuthorFour">毛姆</p>
+              <p class="book-note" data-i18n="bookNoteFour">"满地都是六便士，他却抬头看见了月亮。"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section calligraphy-section" id="calligraphy" aria-labelledby="calligraphy-title">
+        <div class="section-kicker" data-i18n="calligraphyKicker">Practice</div>
+        <div class="section-heading">
+          <h2 id="calligraphy-title" data-i18n="calligraphyTitle">书法日课</h2>
+          <p data-i18n="calligraphyIntro">欣赏书法大家作品，体会书法魅力。</p>
+        </div>
+        <div class="calligraphy-grid">
+          <a href="./书法图片/IMG_0228.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0228.JPG" alt="" loading="lazy" />
+          </a>
+          <a href="./书法图片/IMG_0227.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0227.JPG" alt="" loading="lazy" />
+          </a>
+          <a href="./书法图片/IMG_0225.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0225.JPG" alt="" loading="lazy" />
+          </a>
+          <a href="./书法图片/IMG_0224.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0224.JPG" alt="" loading="lazy" />
+          </a>
+          <a href="./书法图片/IMG_0217.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0217.JPG" alt="" loading="lazy" />
+          </a>
+          <a href="./书法图片/IMG_0216.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0216.JPG" alt="" loading="lazy" />
+          </a>
+          <a href="./书法图片/IMG_0215.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0215.JPG" alt="" loading="lazy" />
+          </a>
+          <a href="./书法图片/IMG_0211.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0211.JPG" alt="" loading="lazy" />
+          </a>
+          <a href="./书法图片/IMG_0210.JPG" target="_blank" class="calligraphy-item" aria-label="书法作品">
+            <img src="./书法图片/IMG_0210.JPG" alt="" loading="lazy" />
+          </a>
+        </div>
+        <p class="calligraphy-more" data-i18n="calligraphyMore">共 9 张</p>
+      </section>
+
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-kicker" data-i18n="projectsKicker">Selected Work</div>
+        <div class="section-heading">
+          <h2 id="projects-title" data-i18n="projectsTitle">做过的东西</h2>
+          <p data-i18n="projectsIntro">
+            一些投入过时间和想法的小项目，还在慢慢积累中。
+          </p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card">
+            <div class="project-visual visual-asset" aria-hidden="true"></div>
+            <div class="project-copy">
+              <p class="project-type" data-i18n="projectOneType">工具 / 原型</p>
+              <h3 data-i18n="projectOneTitle">Asset Tracker</h3>
+              <p data-i18n="projectOneBody">一个轻量的资产记录工具，用来追踪设备、工具和数字资产的归属与状态。</p>
+              <a href="#" data-i18n="projectOneLink">查看项目 →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual visual-notes" aria-hidden="true"></div>
+            <div class="project-copy">
+              <p class="project-type" data-i18n="projectTwoType">笔记 / 工具</p>
+              <h3 data-i18n="projectTwoTitle">Hermes Notes</h3>
+              <p data-i18n="projectTwoBody">连接 AI 助手与个人知识库的笔记管理工具，打通飞书文档、Obsidian 等不同记录空间。</p>
+              <a href="#" data-i18n="projectTwoLink">查看项目 →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual visual-homepage" aria-hidden="true"></div>
+            <div class="project-copy">
+              <p class="project-type" data-i18n="projectThreeType">实验 / 设计</p>
+              <h3 data-i18n="projectThreeTitle">Personal Homepage</h3>
+              <p data-i18n="projectThreeBody">这个主页本身 —— 一个在不断生长的个人表达空间，也是前端设计和内容策略的小实验。</p>
+              <a href="#" data-i18n="projectThreeLink">查看项目 →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div>
+          <div class="section-kicker" data-i18n="contactKicker">Contact</div>
+          <h2 id="contact-title" data-i18n="contactTitle">如果某个想法产生共振，可以从这里开始。</h2>
+        </div>
+        <div class="contact-actions">
+          <a href="mailto:hello@example.com">
+            <span aria-hidden="true">@</span>
+            <span data-i18n="emailLabel">邮箱占位</span>
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noreferrer">
+            <span aria-hidden="true">⌘</span>
+            <span>GitHub</span>
+          </a>
+          <a href="#" aria-label="Personal link placeholder">
+            <span aria-hidden="true">↗</span>
+            <span data-i18n="moreLinks">更多链接待补充</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span data-i18n="footerMade">由 Alan 的个人主页骨架生成，等待真实内容进入。</span>
+      <a href="#top" data-i18n="backTop">回到顶部</a>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
